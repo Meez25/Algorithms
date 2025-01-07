@@ -18,9 +18,11 @@ func canSum(target int, numbers []int) bool {
 	table[0] = true
 
 	for i, val := range table {
-		for _, number := range numbers {
-			if val == true && i+number < len(table) {
-				table[i+number] = true
+		if val == true {
+			for _, number := range numbers {
+				if i+number < len(table) {
+					table[i+number] = true
+				}
 			}
 		}
 	}
