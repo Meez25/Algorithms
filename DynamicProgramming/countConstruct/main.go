@@ -11,11 +11,11 @@ func main() {
 	target := "purple"
 	words := []string{"purp", "p", "ur", "le", "purpl"}
 	cache := make(map[string]int, len(words))
-	result := canConstruct(target, words, cache)
+	result := countConstruct(target, words, cache)
 	fmt.Println(result, "in", time.Since(start))
 }
 
-func canConstruct(target string, words []string, cache map[string]int) int {
+func countConstruct(target string, words []string, cache map[string]int) int {
 	if val, ok := cache[target]; ok {
 		return val
 	}
@@ -26,7 +26,7 @@ func canConstruct(target string, words []string, cache map[string]int) int {
 	possibility := 0
 	for _, word := range words {
 		if strings.HasPrefix(target, word) {
-			count := canConstruct(target[len(word):], words, cache)
+			count := countConstruct(target[len(word):], words, cache)
 			possibility += count
 		}
 	}
