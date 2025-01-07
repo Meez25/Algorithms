@@ -7,9 +7,9 @@ n = array length
 
 Without cache :
 - Time complexity : O(n^m)
-- Space complexity : 0(m)
+- Space complexity : O(m)
 
 With cache :
 - Time complexity : O(n*m)
-- Space complexity : 0(m)
+- Space complexity : O(m)
 
