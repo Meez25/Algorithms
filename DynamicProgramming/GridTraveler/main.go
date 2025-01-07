@@ -15,7 +15,11 @@ func main() {
 
 func gridTraveler(n, m int, cache map[string]int) int {
 	key := fmt.Sprintf("%d,%d", n, m)
+	secondKey := fmt.Sprintf("%d,%d", m, n)
 	if val, ok := cache[key]; ok {
+		return val
+	}
+	if val, ok := cache[secondKey]; ok {
 		return val
 	}
 	if n == 0 || m == 0 {
