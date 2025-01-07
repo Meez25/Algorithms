@@ -2,7 +2,7 @@
 
 Considering a grid of size (n, m).
 
-How many ways are there to reach the bottom right corner, moving only right and down.
+How many ways are there to reach the bottom right corner, moving only right and down ?
 
 With dynamic programming, this problem can be broken down into 2 base cases.
 
