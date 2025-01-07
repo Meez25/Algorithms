@@ -34,6 +34,7 @@ func canConstruct(target string, words []string, cache map[string]int) int {
 		cache[target] = possibility
 		return possibility
 	}
+
 	cache[target] = 0
-	return 0
+	return possibility
 }
