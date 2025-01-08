@@ -12,6 +12,8 @@ func main() {
 		'f': {},
 	}
 	DFSPrint(graph, 'a')
+	fmt.Println("-----------------")
+	DFSRecursion(graph, 'a')
 }
 
 func DFSPrint(graph map[rune][]rune, source rune) {
@@ -27,5 +29,12 @@ func DFSPrint(graph map[rune][]rune, source rune) {
 		for i := range graph[current] {
 			stack = append(stack, graph[current][i])
 		}
+	}
+}
+
+func DFSRecursion(graph map[rune][]rune, source rune) {
+	fmt.Println(string(source))
+	for i := range graph[source] {
+		DFSRecursion(graph, graph[source][i])
 	}
 }
